@@ -7,25 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Your Cart</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="cart">
-            <h2>Your Selected Items</h2>
-            <ul id="cart-items">
-                <!-- Cart items will be dynamically added here -->
-            </ul>
-            <a href="checkout.html" class="btn">Proceed to Checkout</a>
-        </section>
-    </main>
+    <h1>Your Cart</h1>
+    <h2>Items-added</h2>
+    <div id="cart-items"></div>
+    <section id="cart-summary" class="cart-container">
+        <h2>Cart Summary</h2>
+        <div id="cart-items-summary"></div>
+        <p id="cart-total">Total: $0.00</p>
+        <a href="menu.html" class="btn">Back</a>
+        <a href="order_status.html" class="btn">Place Order</a>    </section>
+    <script>
+        function updateCartTotal() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cart-total').innerText = `Total: $${total.toFixed(2)}`;
+        }
+        
+        function proceedToCheckout() {
+            window.location.href = 'checkout.html';
+        }
+        
+        document.addEventListener("DOMContentLoaded", updateCartTotal);
+    </script>
+    <script src="script.js"></script>
+
 </body>
 </html>
