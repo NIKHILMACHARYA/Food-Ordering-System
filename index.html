@@ -8,14 +8,13 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Our Food Ordering System</h1>
+        <h1 class="fade-in"><b>TOMATO</b>   Online Food Ordering System</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-            </ul>
+            <a href="menu.html" class="btn">View Menu</a>
+            <a href="cart.html" class="btn">Cart</a>
+            <a href="checkout.html" class="btn">Check Datails</a>
+            </ul>        
         </nav>
     </header>
     <main>
@@ -24,62 +23,47 @@
             <p>Browse our menu and order your favorite meals with ease.</p>
             <a href="menu.html" class="btn">View Menu</a>
         </section>
-        
-        <section id="featured">
-            <h2>Featured Dishes</h2>
-            <div class="featured-container">
-                <div class="featured-item">
-                    <img src="burger.jpg" alt="Burger">
-                    <h3>Classic Burger</h3>
-                    <p>Juicy grilled burger with fresh toppings.</p>
-                    <button onclick="addToCart(1)">Add to Cart</button>
-                    
-                </div>
-                <div class="featured-item">
-                    <img src="pizza.jpg" alt="Pizza">
-                    <h3>Margherita Pizza</h3>
-                    <p>Classic cheese and tomato pizza with fresh basil.</p>
-                    <button onclick="addToCart(1)">Add to Cart</button>
-                </div>
-                <div class="featured-item">
-                    <img src="pasta.jpg" alt="Pasta">
-                    <h3>Italian Pasta</h3>
-                    <p>Delicious pasta with rich tomato sauce.</p>
-                    <button onclick="addToCart(1)">Add to Cart</button>
-                </div>
-                <div class="featured-item">
-                    <img src="sushi.jpg" alt="Sushi">
-                    <h3>Fresh Sushi</h3>
-                    <p>Authentic Japanese sushi with fresh ingredients.</p>
-                    <button onclick="addToCart(1)">Add to Cart</button>
-                </div>
-                <div class="featured-item">
-                    <img src="tacos.jpg" alt="Tacos">
-                    <h3>Mexican Tacos</h3>
-                    <p>Spicy and flavorful tacos with fresh toppings.</p>
-                    <button onclick="addToCart(1)">Add to Cart</button>
-                </div>
-                <div class="featured-item">
-                    <img src="steak.jpg" alt="Steak">
-                    <h3>Grilled Steak</h3>
-                    <p>Perfectly grilled steak with a side of vegetables.</p>
-                    <button onclick="addToCart(1)">Add to Cart</button>
-                </div>
+    <section id="featured-foods">
+        <h2>Featured Dishes</h2>
+        <div class="food-container">
+            <div class="food-item">
+                <img src="burger.jpg" alt="Burger">
+                <h3>Classic Burger</h3>
+                <p>Juicy grilled burger with fresh toppings.</p>
             </div>
-        </section>
-        <script>
-            function addToCart(itemId) {
-                // You could send an API request to add the item to the cart
-                alert("Item " + itemId + " added to cart!");
-                // Here you could implement actual logic to send this data to your server or update the cart
-            }
-        </script>
-        
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are dedicated to providing delicious, high-quality meals with fast and reliable delivery. Our chefs use the freshest ingredients to create meals that delight your taste buds.</p>
-        </section>
-    </main>
-    <script src="script.js"></script>
+            <div class="food-item">
+                <img src="pizza.jpg" alt="Pizza">
+                <h3>Margherita Pizza</h3>
+                <p>Classic cheese and tomato pizza with fresh basil.</p>
+            </div>
+            
+            <div class="food-item">
+                <img src="pasta.jpg" alt="Pasta">
+                <h3>Italian Pasta</h3>
+                <p>Delicious pasta with rich tomato sauce.</p>
+            </div>
+            <div class="food-item">
+                <img src="sushi.jpg" alt="Sushi">
+                <h3>Fresh Sushi</h3>
+                <p>Authentic Japanese sushi with fresh ingredients.</p>
+            </div>
+            <div class="food-item">
+                <img src="tacos.jpg" alt="Tacos">
+                <h3>Mexican Tacos</h3>
+                <p>Spicy and flavorful tacos with fresh toppings.</p>
+            </div>
+            <div class="food-item">
+                <img src="steak.jpg" alt="Steak">
+                <h3>Grilled Steak</h3>
+                <p>Perfectly grilled steak with a side of vegetables.</p>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing delicious, high-quality meals with fast and reliable delivery. Our chefs use the freshest ingredients to create meals that delight your taste buds.</p>
+    </section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
