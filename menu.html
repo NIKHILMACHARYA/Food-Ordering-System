@@ -3,34 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Our Menu</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Our Menu</h1>
+        <h1 class="fade-in">Explore Our Delicious Menu</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-            </ul>
+            <a href="index.html" class="btn">Home</a>
+            <a href="cart.html" class="btn">Cart</a>
         </nav>
     </header>
-    <main>
-        <section id="menu">
-            <h2>Delicious Dishes</h2>
-            <ul>
-                <li><img src="burger.jpg" alt="Burger"> Burger - $5.99</li>
-                <li><img src="pizza.jpg" alt="Pizza"> Pizza - $9.39</li>
-                <li><img src="pasta.jpg" alt="Pasta"> Pasta - $7.99</li>
-                <li><img src="salad.jpg" alt="Salad"> Salad - $4.79</li>
-                <li><img src="sushi.jpg" alt="Salad"> Sushi - $5.99</li>
-                <li><img src="tacos.jpg" alt="Salad"> Tacos - $6.89</li>
-                <li><img src="steak.jpg" alt="Salad"> Steak - $4.69</li>
-            </ul>
-        </section>
-    </main>
+    
+    <section id="menu-categories">
+        <h2 class="slide-up">Categories</h2>
+        <div class="category-container">
+            <button class="category-btn" onclick="filterMenu('all')">All</button>
+            <button class="category-btn" onclick="filterMenu('burgers')">Burgers</button>
+            <button class="category-btn" onclick="filterMenu('pizzas')">Pizzas</button>
+            <button class="category-btn" onclick="filterMenu('sushi')">Sushi</button>
+            <button class="category-btn" onclick="filterMenu('drinks')">Drinks</button>
+            <button class="category-btn" onclick="filterMenu('desserts')">Desserts</button>
+        </div>
+    </section>
+    
+    <section id="menu-list" class="food-container">
+        <div class="food-item" data-category="burgers">
+            <img src="burger.jpg" alt="Juicy Burger">
+            <h3>Juicy Burger</h3>
+            <p>Grilled chicken patty with fresh toppings.</p>
+            <p><strong>$9.99</strong></p>
+            <button class="btn" onclick="addToCart('1', 'Juicy Burger', 9.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="pizzas">
+            <img src="pizza.jpg" alt="Margherita Pizza">
+            <h3>Margherita Pizza</h3>
+            <p>Classic pizza with tomato, basil, and mozzarella.</p>
+            <p><strong>$12.99</strong></p>
+            <button class="btn" onclick="addToCart('2', 'Margherita Pizza', 12.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="sushi">
+            <img src="sushi.jpg" alt="Fresh Sushi">
+            <h3>Fresh Sushi</h3>
+            <p>Premium sushi with fresh ingredients.</p>
+            <p><strong>$15.99</strong></p>
+            <button class="btn" onclick="addToCart('3', 'Fresh Sushi', 15.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="drinks">
+            <img src="cocktail.jpg" alt="Refreshing Cocktail">
+            <h3>Refreshing Cocktail</h3>
+            <p>Fruity and refreshing summer cocktail.</p>
+            <p><strong>$6.99</strong></p>
+            <button class="btn" onclick="addToCart('4', 'Refreshing Cocktail', 6.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="desserts">
+            <img src="cake.jpg" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Rich and moist chocolate cake.</p>
+            <p><strong>$7.99</strong></p>
+            <button class="btn" onclick="addToCart('5', 'Chocolate Cake', 7.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="pasta">
+           <img src="pasta.jpg" alt="Pasta">
+            <h3>Italian Pasta</h3>
+            <p>Delicious pasta with rich tomato sauce.</p>
+            <button class="btn" onclick="addToCart('6','Doublecheese Pasta',25.6)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="tacose">
+            <img src="tacos.jpg" alt="Tacose">
+             <h3>Mexican Tacos</h3>
+             <p>Spicy and flavorful tacos with fresh toppings.</p>
+             <button class="btn" onclick="addToCart('7','Mexican Tacos',38.2)">Add to Cart</button>
+         </div>
+         <div class="food-item" data-category="steak">
+            <img src="steak.jpg" alt="Steak">
+             <h3>Grilled Steak</h3>
+             <p>Perfectly grilled steak with a side of vegetables.</p>
+             <button class="btn" onclick="addToCart('8','Grilled Steak',28.29">Add to Cart</button>
+         </div>
+
+
+    </section>
+    <section id="cart-summary" class="cart-container">
+        <h2>Cart Summary</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: $0.00</p>
+        <a href="checkout.html" class="btn"> Proceed</a>
+   
+    </section>
+    <script>
+        function updateCartTotal() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cart-total').innerText = `Total: $${total.toFixed(2)}`;
+        }
+        
+        function proceedToCheckout() {
+            window.location.href = 'checkout.html';
+        }
+        
+        document.addEventListener("DOMContentLoaded", updateCartTotal);
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
