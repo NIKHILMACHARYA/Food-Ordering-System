@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <h1 class="fade-in">Track Your Order</h1>
+    <form>
+    <input type="text" id="order-id" placeholder="Enter Order ID" required>
+    <input type="text" id="name" placeholder="Enter your Name" required>
+    
+
+    <button class="btn" onclick="trackOrder()">Track Order</button>
+    <a href="checkout.html" class="btn">Back</a>
+    </form>
+    <div id="order-status" class="slide-up"></div>
+    <script src="script.js"></script>
+</body>
+</html>
