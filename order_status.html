@@ -4,20 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Status</title>
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="styless.css">
 </head>
 <body>
-    <h1 class="fade-in">Track Your Order</h1>
-    <form>
-    <input type="text" id="order-id" placeholder="Enter Order ID" required>
-    <input type="text" id="name" placeholder="Enter your Name" required>
-    
+    <header>
+        <h1 class="fade-in">.</h1>
 
-    <button class="btn" onclick="trackOrder()">Track Order</button>
-    <a href="checkout.html" class="btn">Back</a>
-    </form>
-    <div id="order-status" class="slide-up"></div>
+      <nav>
+        <a href="index.html" class="btn">Home</a>
+        <a href="cart.html" class="btn">Cart</a>
+      </nav>
+   </header>
+
+    <div class="order-container">
+        <h1 class="fade-in">Track Your Order</h1>
+        <form id="order-form">
+            <div class="input-group">
+                <input type="text" id="order-id" placeholder="Enter Order ID" required>
+                
+            </div>
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Enter your Name" required>
+                
+            </div>
+            <button type="submit" class="btn">Track Order</button>
+            <a href="checkout.html" class="btn back-btn">Back</a>
+        </form>
+
+        <div id="order-status-container" class="hidden">
+            <h2>Order Progress</h2>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+            <p id="order-status-text"></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
