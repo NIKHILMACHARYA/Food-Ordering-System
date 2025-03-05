@@ -4,20 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Checkout</h1>
-    <form id="checkout-form">
-        <li><input type="text" id="name" placeholder="Full Name" required></li>
-        <li><input type="text" id="address" placeholder="Delivery Address" required></li>
-        <li><input type="text" id="pincode" placeholder="Pincode" required></li>
-        <li><input type="text" id="mobile no" placeholder="Mobile No:" required></li>
-        <li><input type="text" id="cash/online" placeholder="Cash/Online" required></li>
-
-        <button class="btn" type="submit">Place Order</button>
-        <a href="cart.html" class="btn">Back</a>
-    </form>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <form id="checkout-form">
+            <div class="input-group">
+                <label for="name"><b>Full Name:</b></label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+                <label for="address"><b>Delivery Address:</b></label>
+                <input type="text" id="address" placeholder="Enter your address" required>
+            </div>
+            <div class="input-group">
+                <label for="pincode"><b>Pincode:</b></label>
+                <input type="text" id="pincode" placeholder="Enter pincode" pattern="\d{6}" required>
+            </div>
+            <div class="input-group">
+                <label for="mobile"><b>Mobile No:</b></label>
+                <input type="text" id="mobile" placeholder="Enter mobile number" pattern="\d{10}" required>
+            </div>
+            <div class="input-group">
+                <label for="payment-method"><b>Payment Method:</b></label>
+                <select id="payment-method" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="cash">Cash on Delivery</option>
+                    <option value="online">Online Payment</option>
+                </select>
+            </div>
+            <a href="order_status.html" class="btn">Place Order</a>
+            <a href="cart.html" class="btn back-btn">Back</a>
+        </form>
+        <p class="success-message" id="success-message"></p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
