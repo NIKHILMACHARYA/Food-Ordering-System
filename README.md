@@ -1,6 +1,10 @@
 # 🍔 Food Ordering System – Responsive Food Web Page
 
 Welcome to the **Food Ordering System** – a modern, responsive food ordering web application that allows users to browse menus, place orders, and experience a seamless food delivery interface. Built using HTML, CSS, and JavaScript, this project is perfect for learning or demonstrating frontend development skills.
+---
+
+## 🌐 Live Demo
+🌍 [View My Website](https://food-ordering-system-git-main-nikhil-m-acharya-s-projects.vercel.app)  
 
 ---
 
